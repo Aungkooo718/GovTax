@@ -1,0 +1,126 @@
+﻿@model IEnumerable<GovernmentTaxPrj.Models.TaxPayer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<section class="content-header">
+    <h1 face="Zawgyi-One">အခွန်ဆောင်ထားသူစာရင်း</h1>
+</section>
+<section class="content">
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">အခွန်ဆောင်သူ</h3>
+        </div> 
+        <div class="box-body">
+            <div class="row" style="width:1000px">
+
+                @using (Html.BeginForm())
+                {
+                    <div class="row" style="margin-top:7px">
+                        <div class="col">
+                            <label for="regionid" class="control-label">တိုင်း</label>
+                            <select id="regionid" class="form-control" name="RegionId" asp-items="ViewBag.RegionId"><option>Please Select Region</option></select>
+                        </div>
+                        <div class="col">
+                            <label for="townshipid" name="TownshipId" class="control-label">မြို.နယ်</label>
+                            <select id="townshipid" class="form-control" name="TownshipId" asp-items="ViewBag.TownshipId"><option>Please Select Township</option></select>
+                        </div>
+                        <div class="col">                          
+                                @*Find by name or township: @Html.TextBox("SearchString")*@
+                                နာမည်(သို.)မြို.နယ်ဖြင့်ရယူပါ<input style="height:35px;margin-top:10px" type="text" id="township" name="SearchString" /><br /><br />
+                                <input class="btn btn-primary" type="submit" id="search" value="Search" />
+                       </div>
+                    </div>
+                }
+            </div>
+
+                <p style="padding-top:10px;margin-left:5px">
+                    <a class="btn btn-success" asp-action="Create">Create New</a>
+                </p>
+                <br />
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th style="width:100px">
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th style="width:100px">
+                                @Html.DisplayNameFor(model => model.TinNumber)
+                            </th>
+                            <th style="width:200px">
+                                @Html.DisplayNameFor(model => model.Address)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nrc)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TaxType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Township)
+                            </th>
+                            <th style="width:400px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TinNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nrc)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TaxType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Township.Name)
+                                </td>
+                                <td style="font-size:small">
+                                    <a class="btn btn-secondary pull-right" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                    <a class="btn btn-info pull-right" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                    <a class="btn btn-danger pull-right" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            
+        </div>
+    </div>
+</section>
+
+    @section scripts{
+
+        @*<script>
+            $(document).ready(function () {
+                $("#townshipid").change(function () {
+                    var townshipid = $("#townshipid").val();
+
+                    Index(townshipid);
+                });
+            });
+            function Index(townshipid) {
+                $.ajax({
+                    type: "Get",
+                    url: "/TaxPayers/Index",
+                    contentType: "application/JSON",
+                    data: { TownshipId: townshipid },
+
+                    success: function (data) {
+
+                        console.log(data);
+                        //$('#returndate').append("<option value=" + id + ">" + returndate + "</option>")
+                    }
+                });
+            };
+        </script>*@
+    }

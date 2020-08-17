@@ -1,0 +1,53 @@
+﻿@model IEnumerable<GovernmentTaxPrj.Models.TaxAccount>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<section class="content-header">
+    <h1>TaxAccount</h1>
+</section>
+<section class="content">
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">TaxAccount List</h3>
+        </div>
+        <div class="box-body">
+            <p style="padding-top:10px;margin-left:5px">
+                <a class="btn btn-success pull-right" asp-action="Create">Create New</a>
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="font-size:large">
+                            @Html.DisplayNameFor(model => model.Amount)
+                        </th>
+                        <th style="font-size:large">
+                            @Html.DisplayNameFor(model => model.OpenDate)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Amount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OpenDate)
+                            </td>
+                            <td>
+                                <a class="btn btn-secondary pull-right" asp-action="Edit" asp-route-id="@item.Id">Edit </a>|
+
+                                <a class="btn btn-info pull-right" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+
+                                <a class="btn btn-danger pull-right" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

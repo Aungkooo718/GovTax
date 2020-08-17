@@ -1,0 +1,63 @@
+﻿@model GovernmentTaxPrj.Models.TaxPayer
+
+@{
+    ViewData["Title"] = "Details";
+}
+<section class="content-header">
+    <h1>Details</h1>
+</section>
+<section class="content">
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">Detail of TaxPayer</h3>
+        </div> 
+        <div class="box-body">
+            <div>
+                <h4>TaxPayer</h4>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.TinNumber)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.TinNumber)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Address)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Address)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Nrc)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Nrc)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.TaxType)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.TaxType)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Township)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Township.Name)
+                    </dd>
+                </dl>
+            </div>
+            <div>
+                <a class="btn btn-secondary pull-right" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                <a class="btn btn-primary pull-right" asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+</section>
