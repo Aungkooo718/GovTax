@@ -10,12 +10,11 @@ namespace GovernmentTaxPrj.Models
     public class TaxTransaction
     {
         [Key]
-        public long Id { get; set; }
-        [ForeignKey("Region")]
+        public long Id { get; set; }        
         public long IncomeTypeId { get; set; }
         public IncomeType IncomeType { get; set; }
         public decimal TotalIncome { get; set; }
-        public decimal TaxAmount { get; set; }
+        public decimal TaxAmount { get; set; }       
 
 
     }

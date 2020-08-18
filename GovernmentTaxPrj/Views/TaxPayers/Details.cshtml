@@ -54,6 +54,48 @@
                     </dd>
                 </dl>
             </div>
+            <div class="row">
+                <div>
+                <h3>အခွန်ဆောင်ထားသောစာရင်း</h3>
+                    <table class="table-bordered" style="width:350px; height:auto;border-width:thick;">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>No</th>
+                                <th>TaxPayer Name</th>
+                                <th>Income Type</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>@Model.Name</td>
+                                <td>@Model.TaxType</td>
+                                <td>120000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>&nbsp;&nbsp;
+                <div>
+                    <h3>အသုံးပြုထားသောစာရင်း</h3>
+                    <table class="table-bordered" style="width:350px; height:auto;border-width:thick">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>UsedCar</th>
+                                <th>TaxAmount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>2Yrs</td>
+                                <td>12000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div>
                 <a class="btn btn-secondary pull-right" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
                 <a class="btn btn-primary pull-right" asp-action="Index">Back to List</a>
