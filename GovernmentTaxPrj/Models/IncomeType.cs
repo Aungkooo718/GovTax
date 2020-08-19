@@ -11,7 +11,10 @@ namespace GovernmentTaxPrj.Models
         [Key]
         public long Id { get; set; }
         [Required]
-        public string Name { get; set; }       
+        [StringLength(60,MinimumLength =3)]
+        public string Name { get; set; }    
+        [Required]
+        [Display(Name ="Status")]
         public string Status { get; set; }
         public ICollection<TaxTransaction> TaxTransactions { get; set; }
     }

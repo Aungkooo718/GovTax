@@ -10,7 +10,7 @@ namespace GovernmentTaxPrj.Models
     {
         [Key]
         public long Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please Enter Region Name")]
         public string Name { get; set; }
         public virtual ICollection<Township> Townships { get; set; }
         

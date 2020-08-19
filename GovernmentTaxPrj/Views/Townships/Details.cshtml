@@ -3,28 +3,38 @@
 @{
     ViewData["Title"] = "Details";
 }
+<section class="content-header">
+    <h1>မြို.နယ်အသေးစိတ်ကိုကြည်.ပါ</h1>
+</section>
+<section class="content">
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">မြို.နယ်</h3>
+        </div>
+        <div class="box-body">
 
-<h1>Details</h1>
 
-<div>
-    <h4>Township</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RegionId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RegionId)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a class="btn btn-secondary pull-right" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a class="btn btn-primary pull-right" asp-action="Index">Back to List</a>
-</div>
+            <div>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.RegionId)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.RegionId)
+                    </dd>
+                </dl>
+            </div>
+            <div>
+                <a class="btn btn-secondary pull-right" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                <a class="btn btn-primary pull-right" asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+</section>

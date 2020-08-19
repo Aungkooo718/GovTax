@@ -4,27 +4,37 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>IncomeType</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a class="btn btn-secondary pull-right" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a class="btn btn-primary pull-right" asp-action="Index">Back to List</a>
-</div>
+<section class="content-header">
+    <h1>ဝင်ငွေရလမ်းကြောင်းအသေးစိတ်ကိုကြည်.ပါ</h1>
+</section>
+<section class="content">
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3>ဝင်ငွေရလမ်းကြောင်းအသေးစိတ်</h3>
+        </div>
+        <div class="box-body">
+            <div>
+                <h4>ဝင်ငွေရလမ်းကြောင်း</h4>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Status)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Status)
+                    </dd>
+                </dl>
+            </div>
+            <div>
+                <a class="btn btn-secondary pull-right" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                <a class="btn btn-primary pull-right" asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+</section>

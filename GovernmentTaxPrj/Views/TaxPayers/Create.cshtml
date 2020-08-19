@@ -5,17 +5,18 @@
 }
 
     <section class="content-header">
-        <h4>TaxPayer</h4>
+        <h2>အခွန်ဆောင်ခြင်းကိုပြုလုပ်ပါ</h2>
     </section>
     <section class="content">
         <div class="box box-default">
             <div class="box-header with-border">
-                <h3 class="box-title">Create TaxPayer</h3>
+                <h3 class="box-title">အခွန်ဆောင်ခြင်းပြုလုပ်ခြင်း</h3>
             </div>
             <div class="box-body">
                 <div class="row">
                     <div class="col-md-4">
                         <form asp-action="Create">
+                            @*@Html.ValidationSummary(true)*@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Name" class="control-label"></label>
@@ -44,7 +45,7 @@
                             </div>
                             <div class="form-group">
                                 <label asp-for="TownshipId" class="control-label">TownShip</label>
-                                <select asp-for="Township.Name" class="form-control" asp-items="ViewBag.TownshipId"></select>
+                                <select asp-for="TownshipId" class="form-control" asp-items="ViewBag.TownshipId"></select>
                             </div>
                             <div class="form-group">
                                 <input type="submit" value="Create" class="btn btn-success" />

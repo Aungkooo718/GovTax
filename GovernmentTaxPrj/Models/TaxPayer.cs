@@ -12,15 +12,15 @@ namespace GovernmentTaxPrj.Models
     {
         [Key]
         public long Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please Enter Name")]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please Enter TinNumber")]
         public string TinNumber { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please Enter Address")]
         public string Address { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please Enter Nrc")]
         public string Nrc { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please Enter TaxType")]
         public string TaxType { get; set; }
         [ForeignKey("Township")]
         public long TownshipId { get; set; }

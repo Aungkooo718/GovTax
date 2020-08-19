@@ -63,11 +63,12 @@ namespace GovernmentTaxPrj.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Name");
             return View(township);
         }
 
         // GET: Townships/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
             {
@@ -79,6 +80,8 @@ namespace GovernmentTaxPrj.Controllers
             {
                 return NotFound();
             }
+            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Id", township.RegionId);
+            
             return View(township);
         }
 
@@ -114,11 +117,13 @@ namespace GovernmentTaxPrj.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Id", township.RegionId);
+            
             return View(township);
         }
 
         // GET: Townships/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
             {
@@ -138,7 +143,7 @@ namespace GovernmentTaxPrj.Controllers
         // POST: Townships/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(long id)
         {
             var township = await _context.Townships.FindAsync(id);
             _context.Townships.Remove(township);

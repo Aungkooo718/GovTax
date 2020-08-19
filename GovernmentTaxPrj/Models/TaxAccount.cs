@@ -10,7 +10,12 @@ namespace GovernmentTaxPrj.Models
     {
         [Key]
         public long Id { get; set; }
+        [Required(ErrorMessage ="Please Enter TaxAmount")]
         public decimal Amount { get; set; }
+        [Required(ErrorMessage ="Please Enter TaxAccount OpenDate")]
+        [Display(Name = "OpenDate")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime OpenDate { get; set; }
     }
 }

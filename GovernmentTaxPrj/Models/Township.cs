@@ -11,8 +11,9 @@ namespace GovernmentTaxPrj.Models
     {
         [Key]
         public long Id { get; set; }
+        [Required(ErrorMessage ="Please Enter Township Name")]
         public string Name { get; set; }
-        public ICollection<TaxPayer> TaxPayers { get; set; }
+        public ICollection<TaxPayer> TaxPayers { get; set; }        
         [ForeignKey("Region")]
         public long RegionId { get; set; }
         public Region Region { get; set; }

@@ -105,6 +105,12 @@ namespace GovernmentTaxPrj.Controllers
         {
             if (ModelState.IsValid)
             {
+                //var tax = await _context.TaxPayers.SingleOrDefaultAsync(m => m.TinNumber == taxPayer.TinNumber);
+                //if (tax != null)
+                //{
+                //    ModelState.AddModelError(string.Empty, "This TinNumber already exists.");
+                //}
+
                 _context.Add(taxPayer);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
